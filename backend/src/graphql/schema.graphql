@@ -1,0 +1,23 @@
+type Movie {
+    _id: ID!
+    title: String!
+    image: String!
+    description: String!
+    likes: Int!
+}
+
+input MovieInput {
+    title: String!
+    image: String!
+    description: String!
+}
+
+type Query {
+    movies: [Movie]
+}
+
+type Mutation {
+    createMovie(movie: MovieInput!): Movie
+    deleteMovie(movieId: ID!): Movie
+    incrementLikes(movieId: ID!): Movie
+}
